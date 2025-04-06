@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>高雄苓雅區租屋選配</title>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: transparent;
+      color: #000;
+      padding: 40px;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      padding: 40px;
+    }
+    .image-area {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 20px;
+    }
+    .content {
+      flex: 1;
+      max-width: 500px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px; }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .room-card, .option-card {
+      background-color: transparent;
+      color: #000;
+      padding: 15px;
+      text-align: center;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .room-card.active, .option-card.active {
+      border-color: #000;
+      border-width: 1px;
+      background-color: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <h1>打造您的套房生活</h1>
+    <p>地址：高雄苓雅區河南路170巷30號</p>
+  </header>
+  <main>
+    <div class="image-area">房型圖片</div>
+    <div class="content">
+      <h2>房型介紹</h2>
+      <div class="room-grid">
+        <div class="room-card active" onclick="selectCard(this, 'room')">2樓 雙人房型</div>
+        <div class="room-card" onclick="selectCard(this, 'room')">4樓 雙人房型</div>
+        <div class="room-card" onclick="selectCard(this, 'room')">3樓 雙人房型</div>
+        <div class="room-card" onclick="selectCard(this, 'room')">5樓 單人房型</div>
+      </div>
+      <h2>付款方式</h2>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 30px;">
+        <div onclick="selectUnderline(this, 'payment')" class="payment-line active">現金</div>
+        <div onclick="selectUnderline(this, 'payment')" class="payment-line">轉帳</div>
+      </div>
+      <style>
+        .payment-line {
+          font-weight: bold;
+          font-size: 16px;
+          color: #000;
+          border-bottom: 2px solid #ccc; width: 100%; text-align: center;
+          padding-bottom: 6px;
+          cursor: pointer;
+        }
+        .payment-line.active {
+          border-bottom: 2px solid #000;
+        }
+      </style>
+      <div class="option-grid">
+        <div class="option-card pay-card" onclick="selectCard(this, 'pay')">月繳</div>
+        <div class="option-card pay-card" onclick="selectCard(this, 'pay')">年繳</div>
+      </div>
+
+      <h2>基礎豪華設施</h2>
+<p style="font-size: 13px; color: #666; margin-top: -10px;">(已包含)</p>
+      <ul>
+        <li>櫃台、飲水機、公用廁所、智慧開關、磁浮電動門、掃地機器人、現代風格電梯</li>
+        <li>簡約櫥櫃、冰箱、餐桌椅、洗手台、鏡櫃、馬桶、淋浴、毛巾架</li>
+        <li>衣櫥、床架、書桌、椅子、床頭櫃、窗簾、空調、無線/有線網路、雲端電表</li>
+        <li>洗衣機、植栽</li>
+      </ul>
+      <h2>舒適氛圍升級</h2>
+<p style="font-size: 13px; color: #666; margin-top: -10px;">(已包含)</p>
+      <ul>
+        <li>淋浴氣氛燈</li>
+        <li>淋浴玻璃拉門</li>
+        <li>崁燈洗牆照明</li>
+        <li>床頭氣氛燈</li>
+        <li>床頭霧鄉漆</li>
+        <li>全室鄉居漆</li>
+        <li>全室木地磚</li>
+        <li>全景落地窗</li>
+        <li>陽台木紋格柵</li>
+      </ul>
+      <h2>全室安全門禁</h2>
+<p style="font-size: 13px; color: #666; margin-top: -10px;">(已包含)</p>
+      <div class="option-grid">
+        <div class="option-card access-card" onclick="selectCard(this, 'access')">貴賓感應卡2張</div>
+        <div class="option-card access-card" onclick="selectCard(this, 'access')">貴賓感應磁扣2張</div>
+      </div>
+
+      <h2>生活備品選配</h2>
+      <div class="option-grid">
+        <div class="option-card" onclick="toggleCard(this)">洗髮精/沐浴乳 +800元/組</div>
+        <div class="option-card" onclick="toggleCard(this)">洗衣精/柔軟精 +600元/組</div>
+        <div class="option-card" onclick="toggleCard(this)">大小毛巾組 +800元/組</div>
+        <div class="option-card" onclick="toggleCard(this)">清潔工具組 +1000元/組</div>
+        <div class="option-card" onclick="toggleCard(this)">衛生紙 +1000元/箱</div>
+      </div>
+
+      <h2>智慧家電選配</h2>
+      <div class="option-grid">
+        <div class="option-card" onclick="toggleCard(this)">升級 LG 洗衣機 +1000元/月</div>
+        <div class="option-card" onclick="toggleCard(this)">升級夏普清濕機 +1000元/月</div>
+        <div class="option-card" onclick="toggleCard(this)">升級 LG 清濕機 +1000元/月</div>
+      </div>
+      <h2>清潔服務選配</h2>
+      <div class="option-grid">
+        <div class="option-card" onclick="toggleCard(this)">全室清潔服務 +8000元/月</div>
+      </div>
+      <h2>您的專屬套房</h2>
+      <div style="border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 30px;">
+        <p style="font-size: 16px; font-weight: bold;">金額：<span id="total-amount">NT$0</span></p>
+        <p style="font-size: 16px; font-weight: bold;">訂金：<span id="deposit-amount">NT$0</span></p>
+        <p id="deposit-note" style="font-size: 13px; color: #666; margin-top: -10px;">*訂金為3個月租金於最後退房日返還貴賓</p>
+        <p style="font-size: 16px; font-weight: bold;">應付總金額：<span id="grand-total">NT$0</span></p>
+        <p id="account-info" style="font-size: 14px; color: #000; display: none; margin-top: 10px;">收款帳戶：700中華郵政 <span id="account-number">01013070051164</span> <span onclick="copyAccount()" style="cursor:pointer; color:#999;">(複製)</span></p>
+        <p id="per-person-note" style="font-size: 13px; color: #666; display: none;">*平均一個人僅支付款項：NT$0</p>
+      </div>
+
+      <h2>聯絡我們</h2>
+      <p>客服專線：0903097736</p>
+    </div>
+  </main>
+
+  <script>
+    function selectCard(clicked, group) {
+      const cards = document.querySelectorAll('.' + group + '-card');
+      cards.forEach(card => card.classList.remove('active'));
+      clicked.classList.add('active');
+    }
+    function toggleCard(clicked) {
+      clicked.classList.toggle('active');
+    }
+  
+    function selectUnderline(clicked, group) {
+      const account = document.getElementById('account-info');
+      const isTransfer = clicked.textContent.includes('轉帳');
+      if (account) {
+        account.style.display = isTransfer ? 'block' : 'none';
+      }
+      const lines = document.querySelectorAll('.' + group + '-line');
+      lines.forEach(line => line.classList.remove('active'));
+      clicked.classList.add('active');
+    }
+
+    function copyAccount() {
+      const text = document.getElementById('account-number').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('已複製帳號：' + text);
+      });
+    }
+</script>
+
+<script>
+  function updateTotal() {
+    let baseRent = 0;
+    const roomText = document.querySelector('.room-card.active').textContent;
+    if (roomText.includes('雙人')) {
+      baseRent = document.querySelector('.pay-card.active')?.textContent.includes('月繳') ? 20000 : 236000;
+    } else {
+      baseRent = document.querySelector('.pay-card.active')?.textContent.includes('月繳') ? 16000 : 190000;
+    }
+
+    let total = baseRent;
+
+    const selectedOptions = document.querySelectorAll('.option-card.active');
+    selectedOptions.forEach(option => {
+      const text = option.textContent;
+      const match = text.match(/\+(\d+,?\d*)元/);
+      if (match) {
+        const number = parseInt(match[1].replace(/,/g, ''));
+        total += number;
+      }
+    });
+
+    document.getElementById('total-amount').textContent = 'NT$' + total.toLocaleString();
+    if (document.querySelector('.pay-card.active')?.textContent.includes('月繳')) {
+      const deposit = (roomText.includes('雙人') ? 20000 : 16000) * 3;
+      document.getElementById('deposit-amount').textContent = 'NT$' + deposit.toLocaleString();
+    if (document.getElementById('deposit-note')) {
+      document.getElementById('deposit-note').style.display = 'block';
+    }
+    document.getElementById('grand-total').textContent = 'NT$' + (total + deposit).toLocaleString();
+    const isDouble = roomText.includes('雙人');
+    document.getElementById('per-person-note').style.display = isDouble ? 'block' : 'none';
+    if (isDouble) {
+      document.getElementById('per-person-note').textContent = '*平均一個人僅支付款項：NT$' + Math.round((total + deposit) / 2).toLocaleString();
+    }
+    } else {
+      document.getElementById('deposit-amount').textContent = 'NT$0';
+    if (document.getElementById('deposit-note')) {
+      document.getElementById('deposit-note').style.display = 'none';
+    }
+    document.getElementById('grand-total').textContent = 'NT$' + total.toLocaleString();
+    document.getElementById('per-person-note').style.display = 'none';
+    }
+  }
+
+  // 綁定所有選擇卡片的更新動作
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.room-card, .option-card, .pay-card').forEach(card => {
+      card.addEventListener('click', () => {
+        setTimeout(updateTotal, 100); // 延遲處理 DOM 切換後更新
+      });
+    });
+  });
+
+    function copyAccount() {
+      const text = document.getElementById('account-number').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('已複製帳號：' + text);
+      });
+    }
+</script>
+
+
+</body>
+</html>
+
+
